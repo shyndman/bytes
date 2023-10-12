@@ -18,13 +18,12 @@ categories = ["network-programming", "data-structures"]
 edition = "2018"
 
 [features]
-default = ["std"]
+default = []
 std = []
-use-atomic-polyfill = ["atomic-polyfill"]
 
 [dependencies]
 serde = { version = "1.0.60", optional = true, default-features = false, features = ["alloc"] }
-atomic-polyfill = { version = "1.0.1", optional = true }
+atomic-polyfill = { version = "1.0.1" }
 
 [dev-dependencies]
 serde_test = "1.0"

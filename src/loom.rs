@@ -1,10 +1,6 @@
 #[cfg(not(all(test, loom)))]
 pub(crate) mod sync {
     pub(crate) mod atomic {
-        #[cfg(not(feature = "use-atomic-polyfill"))]
-        pub(crate) use core::sync::atomic::{AtomicPtr, AtomicUsize, Ordering};
-
-        #[cfg(feature = "use-atomic-polyfill")]
         pub(crate) use atomic_polyfill::{AtomicPtr, AtomicUsize, Ordering};
 
         pub(crate) trait AtomicMut<T> {
